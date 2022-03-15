@@ -1,0 +1,86 @@
+@extends('post\layout')
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('post.index') }}">Books </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('R.thesis') }}">Thesis</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('cust.customers') }}">Customers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('cust.customers') }}">Booking</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('cust.customers') }}">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('cust.customers') }}">Contact Us</a>
+            </li>
+
+
+    </div>
+    </li>
+
+    </ul>
+
+    </div>
+</nav>
+
+@section('content')
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Thesis</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="{{ route('R.create_t') }}" class="btn btn-primary float-end">Add Thesis</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                @if (Session::has('message'))
+                    <div class="alert alert-succes">
+                        {{ Session::get('message') }}
+                    </div>
+                @endif
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Thesis Name</th>
+                            <th>Thesis Details</th>
+                            <th>Thesis year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     @foreach ($thesiss as $thesis)
+                            <tr>
+                                <td>{{ ++$i }}</td>
+                                <td>{{ $thesis->thesis_name }}</td>
+                                <td>{{ $thesis->thesis_details }}</td>
+                                <td>{{ $thesis->thesis_year }}</td>
+                                <td>
+                                    <a href="{{ route('R.edit_t', $thesis->t_id) }}" class="btn btn-info">Edit</a>
+                                    @csrf
+                                    <a href="{{ route('R.destroy_t', $thesis->t_id) }}" class="btn btn-danger">Delete</a>
+                                </td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+@endsection
