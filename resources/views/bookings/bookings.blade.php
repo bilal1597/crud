@@ -21,12 +21,14 @@
                 <a class="nav-link" href="{{ route('b.booking') }}">Booking</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('signup') }}">Sign Up</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('about') }}">About Us</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('contactus') }}">Contact Us</a>
             </li>
-
         </ul>
 
     </div>
@@ -57,13 +59,13 @@
                             <th>No</th>
                             <th>Booking By Name</th>
                             <th>Booking Details</th>
-                            <th>price</th>
+                            <th>Price</th>
                             <th>Fine</th>
                             <th>No. of days</th>
                             <th>Booking Date</th>
                             <th>Return Date</th>
                             <th>Total Price</th>
-                            <th>Booked / Returned</th>
+                            <th>Taken / Returned</th>
                             <th>Action</th>
                         </tr>
                     </thead>

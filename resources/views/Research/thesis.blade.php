@@ -21,6 +21,9 @@
                 <a class="nav-link" href="{{ route('cust.customers') }}">Booking</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('signup') }}">Sign Up</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('cust.customers') }}">About Us</a>
             </li>
             <li class="nav-item">

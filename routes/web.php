@@ -15,6 +15,8 @@ use App\Http\Controllers\Postcontroller;
 */
 
 
+Route::get('/post/signup', [Postcontroller::class, 'signup'])->name('signup');
+
 Route::get('/post/about', [PostController::class,'about'])->name('about');
 
 Route::get('/post/contactUs', [PostController::class,'contactus'])->name('contactus');

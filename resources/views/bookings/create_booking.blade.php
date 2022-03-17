@@ -19,6 +19,10 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('b.booking') }}">Booking</a>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('signup') }}">Sign Up</a>
+            </li>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('about') }}">About Us</a>

@@ -61,6 +61,10 @@ class Postcontroller extends Controller
     }
 
 
+    public function signup()
+    {
+        return view('register\signup');
+    }
     public function about()
     {
         return view('post\about');
