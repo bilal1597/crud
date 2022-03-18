@@ -90,10 +90,22 @@
                                 </td>
                     </tr>
                     @endforeach
+
+                    <style>
+                        html,body{
+                background-image: url('https://artlibrarydeco.files.wordpress.com/2021/10/giphy-3.gif?w=480');
+                background-size:cover ;
+                background-repeat: no-repeat;
+                height: 100%;
+                font-family: 'Numans', sans-serif;
+                }
+
+                    </style>
                     </tbody>
                 </table>
 
             </div>
         </div>
+
     </div>
 @endsection

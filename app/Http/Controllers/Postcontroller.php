@@ -86,6 +86,9 @@ class Postcontroller extends Controller
 
     public function create_c()
     {
+
+        
+
         return view('customer\create_c');
     }
 

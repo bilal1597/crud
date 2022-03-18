@@ -49,22 +49,45 @@
                 </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('cust.store_c') }}"method="POST">
+                <form name="Regform" action="{{ route('cust.store_c') }}"method="POST" onclick="validate()">
                     @csrf
-                    <div class="form-group">
+
                         <strong>Customer Name</strong>
                         <input type="text" name="cust_name" placeholder="Name" class="form-control" autofocus>
-                    </div>
-                    <div class="form-group">
+
+
                         <strong>Book Details</strong>
-                        <textarea name="book_details"  rows="2" class="form-control" placeholder="Details"></textarea>
-                        <div class="form-group">
+                        <textarea name="book_details"  rows="1" class="form-control" placeholder="Details"></textarea>
+
                             <strong>Contact</strong>
-                            <input type="text" name="conatct" placeholder="Contact No:" class="form-control" autofocus>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-success mt-2">Save</button>
+                            <input type="number" name="conatct" size="65" placeholder="Contact No:" class="form-control" autofocus>
+
+                            
+                            {{-- @if( book_return !== 'Returned')
+                            <a href="{{ route('return',$book->Id) }}"   class="btn btn-info" id="return_btn">Return</a>
+                        @endif --}}
+                            {{-- <p>Contact <input type="number"
+                                size="65" name="contact" /></p> --}}
+
+
+                    <button type="submit" class="btn btn-success mt-2"  >Save</button>
                     </form>
+
+                    <script>
+
+                        function validate(){
+                        var contacts  = document.forms["Regform"]["contact"];
+
+                        if(contacts.value.length > 11){
+                            window.alert('Invalid contact No.  it must be in 11 number ')
+                            contacts.focus();
+                            return false;
+
+                        }
+                        return true;
+                    }
+
+                    </script>
 
             </div>
         </div>
